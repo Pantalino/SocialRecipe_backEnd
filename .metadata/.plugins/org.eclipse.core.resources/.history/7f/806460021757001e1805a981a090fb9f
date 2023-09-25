@@ -1,0 +1,30 @@
+package com.social.services;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.social.entities.Chat;
+import com.social.repos.ChatDAO;
+
+public class ChatServiceImpl implements ChatService{
+	
+	@Autowired
+	private ChatDAO dao;
+
+	@Override
+    public Chat inviaMessaggio(Chat chat) {
+        // Implementa la logica per inviare un messaggio, ad esempio, impostando la data/ora di invio.
+        chat.setDataOraInvio(new Date());
+        return dao.save(chat);
+    }
+
+    @Override
+    public List<Chat> trovaMessaggiTraUtenti(Long mittenteId, Long destinatarioId) {
+        // Implementa la logica per trovare i messaggi tra due utenti.
+        // Puoi utilizzare il repository ChatDAO per eseguire la query appropriata.
+        return dao.findByMittenteAndDestinatario(mittenteId, destinatarioId);
+    }
+
+}

@@ -1,0 +1,9 @@
+package com.social.repos;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.social.entities.Chat;
+
+public interface ChatDAO extends JpaRepository<Chat, Long>{
+
+}

@@ -1,0 +1,5 @@
+package com.social.repos;
+
+public interface ChatDAO {
+
+}

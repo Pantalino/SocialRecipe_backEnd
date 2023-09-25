@@ -1,0 +1,13 @@
+package com.social.repos;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.social.entities.Chat;
+
+public interface ChatDAO extends JpaRepository<Chat, Long>{
+	
+	List<Chat> trovaMessaggiTraUtenti();
+
+}

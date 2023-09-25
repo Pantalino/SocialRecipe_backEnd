@@ -1,0 +1,5 @@
+package com.social.services;
+
+public interface ChatService {
+
+}
